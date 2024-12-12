@@ -1,0 +1,39 @@
+name: Test on Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Klonar projektet
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Installera backend-beroenden
+      - name: Install backend dependencies
+        run: |
+          cd Docker/backend
+          npm install
+
+      # Kör backend-tester
+      - name: Run backend tests
+        run: |
+          cd Docker/backend
+          npm test
+
+      # Installera frontend-beroenden
+      - name: Install frontend dependencies
+        run: |
+          cd Docker/frontend
+          npm install
+
+      # Kör frontend-tester
+      - name: Run frontend tests
+        run: |
+          cd Docker/frontend
+          npm test
