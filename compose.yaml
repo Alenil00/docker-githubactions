@@ -12,6 +12,8 @@ services:
     restart: always
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/app
   backend:
     container_name: backend
     image: backend

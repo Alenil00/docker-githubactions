@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
       <div className="space-y-4 w-full max-w-2xl">
-        <h1 className="text-2xl font-bold text-gray-800 text-center">User Management App</h1>
+        <h1 className="text-2xl font-bold text-gray-800 text-center">User sup App</h1>
 
         {/* Create user */}
         <form onSubmit={createUser} className="p-4 bg-blue-100 rounded shadow">
